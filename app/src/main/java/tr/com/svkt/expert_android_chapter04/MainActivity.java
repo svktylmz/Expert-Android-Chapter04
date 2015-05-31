@@ -12,7 +12,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new GSONFunctionTester().testJSON();
+        GSONFunctionTester ft = new GSONFunctionTester();
+        ft.testJSON();
+        ft.testEscapeCharactersInPreferences();
     }
 
     @Override
