@@ -5,6 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+/**
+ * JSON for On-Device Persistence
+ * 1. Using GSON to convert Java objects to JSON strings and back
+ * 2. Storing and retrieving JSON strings using shared preferences
+ * 3. Storing and retrieving JSON strings from Android internal file storage
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
