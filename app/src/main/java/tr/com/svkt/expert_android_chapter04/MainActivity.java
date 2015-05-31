@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
         GSONFunctionTester ft = new GSONFunctionTester();
         ft.testJSON();
         ft.testEscapeCharactersInPreferences();
+        ft.storeJSON();
+        ft.retrieveJSON();
     }
 
     @Override

@@ -57,4 +57,35 @@ public class GSONFunctionTester {
         return;
     }
 
+    public void storeJSON(){
+        MainObject mo = MainObject.createTestMainObject();
+        Gson gson = new Gson();
+        String jsonString = gson.toJson(mo);
+        Log.i(TAG, jsonString);
+
+        SharedPreferences sp = getSharedPreferences();
+        SharedPreferences.Editor  spe = sp.edit();
+        spe.putString("json", jsonString);
+        spe.commit();
+    }
+
+    public void retrieveJSON(){
+        SharedPreferences sp = getSharedPreferences();
+        String jsonString = sp.getString("json", null);
+        if(jsonString == null){
+            Log.i(TAG, "Not able to read preference.");
+            return;
+        }
+        Gson gson = new Gson();
+        MainObject mo = gson.fromJson(jsonString, MainObject.class);
+        Log.i(TAG, "Object successfully retrieved.");
+        String compareResult = MainObject.checkTestMainObject(mo);
+        if(compareResult != null){
+            Log.i(TAG, compareResult);
+            return;
+        }
+        //compareResult is null
+        Log.i(TAG, "compareResult is null");
+        return;
+    }
 }
