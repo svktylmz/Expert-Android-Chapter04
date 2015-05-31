@@ -13,10 +13,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         GSONFunctionTester ft = new GSONFunctionTester();
-        ft.testJSON();
-        ft.testEscapeCharactersInPreferences();
-        ft.storeJSON();
-        ft.retrieveJSON();
+        //ft.testJSON();
+        //ft.testEscapeCharactersInPreferences();
+        //ft.storeJSON();
+        //ft.retrieveJSON();
+        ft.saveJSONToPrivateStorage();
     }
 
     @Override
